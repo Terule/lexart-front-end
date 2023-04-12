@@ -11,3 +11,29 @@ const getArrayValues = (array) => {
   const highestNumber = Math.max(...numbers);
   return { letters, numbers, highestNumber };
 };
+
+/*
+2.  Create a hashmap (or a simple object in PHP) that contains the elementary functions of addition, subtraction, multiplication, and division.
+Take into account that the division must not allow 0 dividend
+The sum function allows an array as an input parameter and adds all its elements.
+The subtraction function allows an array as an input parameter and subtracts all its elements.
+Multiplication Function - Ditto
+The division function accepts two parameters: a and b.
+*/
+
+const sum = (array) => array.reduce((a, b) => a + b)
+const subtraction = (array) => array.reduce((a, b) => a - b)
+const multiplication = (array) => array.reduce((a, b) => a * b)
+const division = (a, b) => {
+  if (b === 0) {
+    return "The dividend cannot be 0";
+  }
+  return a / b;
+}
+
+const operations = new Map([
+  ["sum", sum],
+  ["subtraction", subtraction],
+  ["multiplication", multiplication],
+  ["division", division],
+]);
